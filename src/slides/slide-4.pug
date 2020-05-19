@@ -1,0 +1,14 @@
+section
+  h2 Rendering
+  section
+    pre
+        code.
+            ReactDOM.render(&lt;Hi/&gt;, document.querySelector('#root'));
+    p Babel will compile this code to:
+    pre
+        code.
+            ReactDOM.render(
+                React.createElement(Hi),
+                document.querySelector('#root')
+            );
+    
