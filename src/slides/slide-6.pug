@@ -1,0 +1,16 @@
+section
+  h2 State
+  section
+    pre
+        code.javascript.
+            import React from 'react';
+            import ReactDOM from 'react-dom';
+
+            function Computer() {
+                const [isOn, setOn] = React.useState(true);
+                return (
+                    <div className="computer">the computer is {isOn ? 'on' : 'off'}</div>
+                );
+            }
+
+            ReactDOM.render(&lt;Computer /&gt;, document.getElementById('root'));
