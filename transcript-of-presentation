@@ -1,0 +1,44 @@
+How to start React?
+We’ll talk about how to start use React library. At first I wanna note, that you should know HTML, CSS and Javascript. Then it will be much easier for you.
+
+SLIDE 1
+React is a Javascript library for building user interfaces. It’s created by Facebook in 2013. It helps you create interactive web applications made up of components.
+
+SLIDE 2
+A component is written as an usual JavaScript function. And this is real JavaScript, not a template language. React supports a special syntax called JSX, which looks a lot like HTML, but it is turned into real JavaScript code by a compiler.
+A web page is made up of components like a “tree” structure. React components can contain other. It resembles HTML structure. But these components are functions.
+
+	One of the defining features of React is the idea of one-way data flow. It means, that data is only ever passed down the tree, from a component to its children. Just like a waterfall: only down, not up or sideways.
+
+	Ok, let’s start. At first you should install the React library. It is very simple to do, so we will not dwell on this. Let’s try to create “Hello World”.
+
+SLIDE 3
+At the top we have to import 2 statements. These pull in the ‘react’ and ‘react-dom’ libraries.
+Next comes the ‘Hi’ component. That’s a usual Javascript function except for one part: The <div>Hello World!</div> - it is a JSX syntax, and it looks and works a lot like HTML. React calls the function, gets the JSX, and renders the equivalent HTML to the DOM. Notice that the JSX is not a string. React isn’t turning these things directly into strings.
+	Before React runs, there’s an extra step the code goes through that converts the JSX into function calls. This all happens behind the scenes.
+	You have a logical question : how does React know where in the DOM to put this div on the page? The answer is Rendering.
+
+SLIDE 4
+	It instructs React to call the Hi function, gets the returned JSX, and inserts the corresponding HTML elements into the document under the element with id “root”. And very important thing: We’re not calling Hi(), we’re just passing it. React is responsible for calling your component function. It’ll do that at render time – in other words, somewhere in the depths of the ReactDOM.render function, and not inside React.createElement.
+
+
+SLIDE 5
+Let’s use props. When React renders a component, it passes the component’s properties, props as the first argument, as an object. The props object is just a usual JS object, where the keys are prop names and the values are values of those props.
+well, this example we discussed
+
+	next I want to introduce you to the concept of State. React has a feature called state which allows components to keep track of values that can change. Ok, let’s code. We need a new example.
+
+SLIDE 6
+	At the beginning, as always, imports. Then we’ve added the call to React.useState, and passes the initial state in true with hook. Ok, what is hook? Hooks are functions that let you “hook into” React state and lifecycle features from function components. Come back to our function. It returns an array with two entries - the first is the state value itself (so, isOn will be true) and the second is a function to change the state. Left part of constant is  the array destructuring syntax.
+	Before React calls your component, it sets up an array to keep track of which hooks get called. When you call useState in the component, React uses that array behind the scenes to keep track of its initial value, and the value as it changes over time.
+	Ok, everything is clear, but our computer is still on. Let’s create a button “push”, that will turn it on and off.
+SLIDE 7
+	When you click the button, it will call its onClick prop.
+And why we don’t just write isOn equally exclamation mark isOn?
+Cause setOn function has 2 jobs:
+*	first it changes the state
+*	then it re-renders the component
+If you just change the variable directly, React has no way of knowing that it changed, and it won’t re-render. Remember that isOn is a regular old variable – not a special React thing! It will go out of scope at the end of the function and any changes to it would be lost.
+So that’s why it’s important to call the setter, so that React can update the value of that hook’s state behind the scenes.
+
+
