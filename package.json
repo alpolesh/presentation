@@ -12,7 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "react-reveal": "^1.2.2",
-    "reveal.js": "^3.9.2"
+    "reveal.js": "^4.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
